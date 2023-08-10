@@ -1,14 +1,19 @@
-import React from 'react';
-import RecipeItem from './RecipeItem';
-
-function RecipeList({ recipes, onSelect }) {
-    return (
-        <div>
-            {recipes.map((recipe, index) => (
-                <RecipeItem key={index} recipe={recipe} onSelect={() => onSelect(recipe)} />
-            ))}
-        </div>
-    );
-}
-
-export default RecipeList;
+// import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import IngredientRecipes from './IngredientRecipes';
+//
+// function RecipeList({ recipes, onSelect }) {
+//     return (
+//         <div>
+//             {recipes.map((recipe, index) => (
+//                 <div key={index}>
+//                     <Link to={`/recipe/${recipe.id}`}>
+//                         <h3>{recipe.title}</h3>
+//                     </Link>
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// }
+//
+// export default RecipeList;

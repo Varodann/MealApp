@@ -1,11 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 
-function RecipeDetail({ selectedRecipe, recipeDetails }) {
-    const { id } = useParams();
-
-    const selectedDetails = recipeDetails && recipeDetails.id === Number(id) ? recipeDetails : null;
-
+function RecipeDetail({ selectedRecipe }) {
     if (!selectedRecipe) {
         return <div>No recipe selected.</div>;
     }
@@ -14,13 +9,7 @@ function RecipeDetail({ selectedRecipe, recipeDetails }) {
         <div>
             <h2>{selectedRecipe.title}</h2>
             <p>{selectedRecipe.instructions}</p>
-            {selectedDetails && (
-                <div>
-                    <h3>Recipe Details</h3>
-                    <p>{selectedDetails.text}</p>
-                    <img src={selectedDetails.image} alt="Recipe" />
-                </div>
-            )}
+            {/* Wyświetl obrazek i składniki */}
         </div>
     );
 }

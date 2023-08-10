@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import RecipeSearchForm from './components/RecipeSearchForm';
-import RecipeList from './components/RecipeList';
+import IngredientRecipes from './components/IngredientRecipes';
 import RecipeDetail from './components/RecipeDetail';
 import './App.css';
 
@@ -25,15 +25,13 @@ function App() {
                     <h1>Recipe Search App</h1>
                 </header>
                 <main className="main">
-                    <Switch>
-                        <Route exact path="/">
-                            <RecipeSearchForm onSearch={handleSearch} />
-                            <RecipeList recipes={recipes} onSelect={handleRecipeSelect} />
-                        </Route>
-                        <Route path="/recipe/:id">
-                            <RecipeDetail selectedRecipe={selectedRecipe} />
-                        </Route>
-                    </Switch>
+                    <Route exact path="/">
+                        <RecipeSearchForm onSearch={handleSearch} />
+                        <IngredientRecipes recipes={recipes} onSelect={(recipe) => console.log(recipe)} />
+                    </Route>
+                    <Route path="/recipe/:id">
+                        <RecipeDetail selectedRecipe={selectedRecipe} />
+                    </Route>
                 </main>
                 <footer className="footer">
                     <p>© 2023 Recipe Search App</p>

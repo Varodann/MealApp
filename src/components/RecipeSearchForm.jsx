@@ -14,7 +14,7 @@ function RecipeSearchForm({ onSearch }) {
 
     const fetchRecipes = async () => {
         try {
-            const apiKey = '7aed44cef9d648da9a486c70f59a800c';
+            const apiKey = 'a146e672c456424cad06ded59b091aea';
             const response = await fetch(
                 `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${ingredients}`
             );
